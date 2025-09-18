@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="todo.css">
+    <script type="module" src="todo.js"></script>
+    <script type="module" src="themeswitcher.js"></script>
+</head>
+
+<body data-theme="dark" style="overflow: visible;">
+    <header>
+        <h1>Todo App</h1>
+        <label for="theme-select">Select Theme:
+            <select id="theme-select">
+                <option value="dark">Dark</option>
+                <option value="light">Light</option>
+            </select>
+        </label>
+    </header>
+    <main>
+        <section class="todo-section">
+            <h2>My Todos</h2>
+            <button id="add-todo">Add New Todo</button>
+            <div id="new-todo-container" class="hidden">
+                <input type="text" id="new-todo-description" placeholder="Description">
+                <input type="number" id="new-todo-amount" placeholder="Amount">
+                <input type="date" id="new-todo-due-date">
+                <select id="new-todo-priority">
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+
+                <button id="save-todo">Save</button>
+                <button id="cancel-todo">Cancel</button>
+            </div>
+            <div id="controls">
+                <div id="sorting-options">
+                    <p>Sort By:</p>
+                    <button id="sort-description" class="sorting" data-sort="description"
+                        data-sort-direction="asc">Description</button>
+                    <button id="sort-amount" class="sorting" data-sort="amount"
+                        data-sort-direction="asc">Amount</button>
+                    <button id="sort-due-date" class="sorting" data-sort="dueDate" data-sort-direction="asc">Due
+                        Date</button>
+                    <button id="sort-priority" class="sorting" data-sort="priority"
+                        data-sort-direction="asc">Priority</button>
+                    <button id="sort-created" class="sorting" data-sort="createdAt"
+                        data-sort-direction="asc">Created</button>
+                </div>
+                <div id="filter-options">
+                    <label for="filter-priority">Filter Priority:</label>
+                    <select id="filter-priority">
+                        <option value="">All</option>
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                </div>
+            </div>
+            <ul id="todo-list">
+                <!-- Todo items will be dynamically added here -->
+            </ul>
+            <div id="delete-confirmation" class="hidden">
+                <p>Are you sure you want to delete this todo?</p>
+                <div class="confirmation-buttons">
+                    <button id="confirm-delete">Yes</button>
+                    <button id="cancel-delete">No</button>
+                    <button id="dont-ask-again">Don't ask again</button>
+                </div>
+            </div>
+            <div id="overlay" class="hidden"></div>
+            <h2>Completed Todos</h2>
+            <ul id="completed-todo-list">
+                <!-- Completed todo items will be dynamically added here -->
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Todo App | <a href="https://github.com/josk0004/exercises/tree/main/todo-app"
+                target="_blank">GitHub</a></p>
+    </footer>
+</body>
+
+</html>
